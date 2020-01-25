@@ -1,0 +1,3 @@
+﻿  OtherMain.c
+C:\Users\Евгений\OneDrive\C project\Task03\Task03\OtherMain.c(87,12): warning C4013: time: нет определения; предполагается "extern" с возвратом типа "int"
+  Task03.vcxproj -> C:\Users\Евгений\OneDrive\C project\Task03\Debug\Task03.exe
