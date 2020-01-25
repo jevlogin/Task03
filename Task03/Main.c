@@ -44,8 +44,6 @@ int main(int argc, char* argv[])
 	Print(mas);
 	*/
 
-	
-
 	SortSheker(mas);
 	puts("Печать после шейкерной сортировки массива.\n");
 	Print(mas);
@@ -72,6 +70,7 @@ void SortSheker(int* mas)
 			}
 		}
 		right--;
+		//	двигаемся справа налево
 		for (int i = right; i > left; i--)
 		{
 			if (mas[i-1] > mas[i])
