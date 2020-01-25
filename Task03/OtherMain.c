@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 	//	объявили массив
 	int mas[MaxN];
 	//	Наполнили массив псевдослучайными числами
-	CreateMas(mas);
+	CreateMas(&mas);
 	puts("Печать до сортировки массива.\n");
 	Print(mas);
 
@@ -81,7 +81,7 @@ void swap(int* a, int* b)
 	*b = t;
 }
 
-void CreateMas(int  mas[100])
+void CreateMas(int*  mas)
 {
 	//	пока не понял что это такое...
 	srand(time(NULL));
