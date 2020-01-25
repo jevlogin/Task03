@@ -1,5 +1,7 @@
 ﻿  Main.c
-C:\Users\Евгений\OneDrive\C project\Task03\Task03\Main.c(31,16): warning C4047: функция: "int *" отличается по уровням косвенного обращения от "int (*)[100]"
-C:\Users\Евгений\OneDrive\C project\Task03\Task03\Main.c(31,16): warning C4024: CreateMas: различные типы для формального и фактического параметров 1
-C:\Users\Евгений\OneDrive\C project\Task03\Task03\Main.c(137,12): warning C4013: time: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\Евгений\OneDrive\C project\Task03\Task03\Main.c(48,1): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message : см. объявление "scanf"
+C:\Users\Евгений\OneDrive\C project\Task03\Task03\Main.c(86,1): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message : см. объявление "scanf"
+C:\Users\Евгений\OneDrive\C project\Task03\Task03\Main.c(198,12): warning C4013: time: нет определения; предполагается "extern" с возвратом типа "int"
   Task03.vcxproj -> C:\Users\Евгений\OneDrive\C project\Task03\Debug\Task03.exe

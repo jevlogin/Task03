@@ -15,40 +15,100 @@ int count = 0;
 2. *Реализовать шейкерную сортировку.
 3. Реализовать бинарный алгоритм поиска в виде функции, которой передается отсортированный массив. Функция возвращает индекс найденного 
 элемента или -1, если элемент не найден.
-4. *Подсчитать количество операций для каждой из сортировок и сравнить его с асимптотической сложностью алгоритма.
-Достаточно решить 3 задачи. Записывайте в начало программы условие и свою фамилию. Все решения создавайте в одной программе. 
-Задачи со звездочками выполняйте в том случае, если решили базовые. Снабдите программу меню.
 
 */
 int main(int argc, char* argv[])
 {
 	setlocale(LC_ALL, "RUS");
 	
-	//	объявили массив
+	//	объявили массив с размером MaxN
 	int mas[MaxN];
-	//	Наполнили массив псевдослучайными числами
-	//	Кстати, правильно ли я создаю массив?
-	CreateMas(&mas);
+
+	Menu(mas);
+
+	return (0);
+}
+
+void Menu(int* mas)
+{
+	int solution;
+
+	CreateMas(mas);
 	puts("Печать до сортировки массива.\n");
 	Print(mas);
 
-	/*	временно скрываем
-	SortBuble(mas);
-	puts("Печать после сортировки массива.\n");
-	Print(mas);
-	*/
+	do
+	{
+		printf("Какое задание выполнить?\n");
+		printf("1 - сортировка пузырьком\n");
+		printf("2 - улучшенная сортировка пузырьком\n");
+		printf("3 - Шейкерная сортировка\n");
+		printf("4 - Бинарный поиск! (Возможен только после сортировки!)\nДля выхода введите 0\n");
 
-	/*
-	SortBubleBest(mas);
-	puts("Печать после сортировки массива.\n");
-	Print(mas);
-	*/
+		scanf("%d", &solution);
+		switch (solution)
+		{
+		case 1:
+			SortBuble(mas);
+			puts("Печать после сортировки массива.\n");
+			Print(mas);
+			break;
+		case 2:
+			SortBubleBest(mas);
+			puts("Печать после сортировки массива.\n");
+			Print(mas);
+			break;
+		case 3:
+			SortSheker(mas);
+			puts("Печать после шейкерной сортировки массива.\n");
+			Print(mas);
+			break;
+		case 4:
+			BinnarySearch(mas);
+			break;
+		case 0:
+			printf("Вы выбрали вход");
+			break;
+		default:
+			printf("Вы ничего не выбрали");
+			break;
+		}
+	} while (solution != 0);
+	
+}
+void BinnarySearch(int* mas)
+{
+	int searchValue;
+	int left = 0, right = MaxN - 1;	// указываем индексы элементов
+	int middle;
 
-	SortSheker(mas);
-	puts("Печать после шейкерной сортировки массива.\n");
-	Print(mas);
+	printf("Введите искомое число: ");
+	scanf("%d", &searchValue);
 
-	return (0);
+	middle = left + (right - left) / 2;
+
+	while (left < right && mas[middle] != searchValue)
+	{
+		if (mas[middle] <= searchValue)
+		{
+			left = middle + 1;
+		}
+		else
+		{
+			right = middle - 1;
+		}
+		middle = left + (right - left) / 2;
+	}
+
+	if (mas[middle] == searchValue)
+	{
+		printf("Значение %i найдено под индексом %i\n", searchValue, middle);
+	}
+
+	else
+	{
+		printf("Значение %i не найдено\n", searchValue);
+	}
 }
 
 void SortSheker(int* mas)
@@ -82,6 +142,7 @@ void SortSheker(int* mas)
 		left--;
 	}
 }
+
 void SortBubleBest(int* mas)
 {
 	for (int i = 0; i < MaxN; i++)
@@ -96,7 +157,6 @@ void SortBubleBest(int* mas)
 		}
 	}
 }
-
 
 void SortBuble(int* mas)
 {
@@ -122,6 +182,7 @@ void Print(int*  mas)
 			printf("\n");
 		}
 	}
+	printf("\n\n");
 }
 
 void swap(int* a, int* b)
