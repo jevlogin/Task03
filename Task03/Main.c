@@ -38,18 +38,50 @@ int main(int argc, char* argv[])
 	Print(mas);
 	*/
 
-	//	пробуем новую сортировку
-	
+	/*
 	SortBubleBest(mas);
 	puts("Печать после сортировки массива.\n");
 	Print(mas);
+	*/
+
 	
 
-	/*SortSheker(mas);
+	SortSheker(mas);
 	puts("Печать после шейкерной сортировки массива.\n");
-	Print(mas);*/
+	Print(mas);
 
 	return (0);
+}
+
+void SortSheker(int* mas)
+{
+	int left = 0; 
+	int right = MaxN - 1;	// сразу сделаем здесь - 1 для ситля
+	int flag = 1;
+
+	while ((left < right) && flag > 0)
+	{
+		flag = 0;
+		//	двигаемся направо
+		for (int i = left; i < right; i++)
+		{
+			if (mas[i] > mas[i + 1])
+			{
+				swap(&mas[i], &mas[i + 1]);
+				flag++;
+			}
+		}
+		right--;
+		for (int i = right; i > left; i--)
+		{
+			if (mas[i-1] > mas[i])
+			{
+				swap(&mas[i - 1], &mas[i]);
+				flag++;
+			}
+		}
+		left--;
+	}
 }
 void SortBubleBest(int* mas)
 {

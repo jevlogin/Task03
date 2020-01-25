@@ -1,5 +1,5 @@
 ﻿  Main.c
 C:\Users\Евгений\OneDrive\C project\Task03\Task03\Main.c(31,16): warning C4047: функция: "int *" отличается по уровням косвенного обращения от "int (*)[100]"
 C:\Users\Евгений\OneDrive\C project\Task03\Task03\Main.c(31,16): warning C4024: CreateMas: различные типы для формального и фактического параметров 1
-C:\Users\Евгений\OneDrive\C project\Task03\Task03\Main.c(106,12): warning C4013: time: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\Евгений\OneDrive\C project\Task03\Task03\Main.c(138,12): warning C4013: time: нет определения; предполагается "extern" с возвратом типа "int"
   Task03.vcxproj -> C:\Users\Евгений\OneDrive\C project\Task03\Debug\Task03.exe
